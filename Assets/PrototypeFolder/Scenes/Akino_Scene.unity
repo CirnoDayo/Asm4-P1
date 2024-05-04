@@ -2113,6 +2113,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f37c0e619acaa4e98fc39314dd5a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInteraction:
+    m_Name: Player Interaction
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: aa2a6caa-6518-4576-b37f-6ae1df292305
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   moveSpeed: 10
 --- !u!212 &570002827
 SpriteRenderer:
