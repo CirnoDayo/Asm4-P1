@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class Akino_PlayerMovement : MonoBehaviour
 {
-    public InputAction playerInteraction;
     [Range(0, 20)] public float moveSpeed;
     
     Controls controls;
