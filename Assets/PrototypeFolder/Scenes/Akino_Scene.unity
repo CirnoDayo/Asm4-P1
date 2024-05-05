@@ -2164,7 +2164,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0, g: 0.26680493, b: 1, a: 1}
   m_FlipX: 0
@@ -2188,7 +2188,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1609491564}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &570002829
@@ -2261,7 +2262,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.2, y: 1.2}
   m_EdgeRadius: 0
 --- !u!114 &570002831
 MonoBehaviour:
@@ -2357,7 +2358,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8ebd5d80d7c7542ac1a145ae754143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdSpot: {fileID: 0}
+  holdSpot: {fileID: 1609491564}
+  pickUpMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &602648964
 GameObject:
   m_ObjectHideFlags: 0
@@ -5137,7 +5141,7 @@ GameObject:
   - component: {fileID: 1459681993}
   - component: {fileID: 1459681995}
   - component: {fileID: 1459681994}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Dish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5205,7 +5209,7 @@ Transform:
   m_GameObject: {fileID: 1459681989}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.616, y: -3.926, z: 0}
+  m_LocalPosition: {x: -5.58, y: -0.28, z: 0}
   m_LocalScale: {x: 0.028830245, y: 0.018281259, z: 0.028830245}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5948,6 +5952,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2072498247}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1609491563
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1609491564}
+  m_Layer: 0
+  m_Name: HoldSpot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1609491564
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609491563}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.011, y: 0.004, z: 0.017982455}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 570002828}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1610349826
 GameObject:
