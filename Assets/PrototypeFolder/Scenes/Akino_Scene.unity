@@ -2094,6 +2094,7 @@ GameObject:
   - component: {fileID: 570002830}
   - component: {fileID: 570002826}
   - component: {fileID: 570002831}
+  - component: {fileID: 570002832}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2344,6 +2345,19 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &570002832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570002825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de8ebd5d80d7c7542ac1a145ae754143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holdSpot: {fileID: 0}
 --- !u!1 &602648964
 GameObject:
   m_ObjectHideFlags: 0
@@ -5120,8 +5134,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1459681991}
   - component: {fileID: 1459681990}
-  - component: {fileID: 1459681992}
   - component: {fileID: 1459681993}
+  - component: {fileID: 1459681995}
+  - component: {fileID: 1459681994}
   m_Layer: 0
   m_Name: Dish
   m_TagString: Untagged
@@ -5190,14 +5205,30 @@ Transform:
   m_GameObject: {fileID: 1459681989}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.598, y: -3.957, z: 0}
+  m_LocalPosition: {x: -8.616, y: -3.926, z: 0}
   m_LocalScale: {x: 0.028830245, y: 0.018281259, z: 0.028830245}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &1459681992
-CapsuleCollider2D:
+--- !u!114 &1459681993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459681989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26be4cc73e4c1484a81fd03e647ca7c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupdish:
+    m_PersistentCalls:
+      m_Calls: []
+  isInRange: 0
+--- !u!61 &1459681994
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5228,22 +5259,46 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 53.8, y: 59.9}
-  m_Direction: 1
---- !u!114 &1459681993
-MonoBehaviour:
+  m_Offset: {x: 0, y: -1.8}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 54, y: 54}
+    newSize: {x: 54, y: 54}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 54, y: 67}
+  m_EdgeRadius: 0
+--- !u!50 &1459681995
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1459681989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26be4cc73e4c1484a81fd03e647ca7c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInRange: 0
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 20
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1490552318
 GameObject:
   m_ObjectHideFlags: 0
