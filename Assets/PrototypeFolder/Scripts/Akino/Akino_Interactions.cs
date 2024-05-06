@@ -19,7 +19,7 @@ public class Akino_Interactions : MonoBehaviour
     private void Start()
     {
         pointer = GameObject.Find("Pointer").transform;
-        lookTarget = GameObject.Find("LookTarget").transform.parent;
+        lookTarget = GameObject.Find("LookTarget").transform;
     }
 
     private void Update()
@@ -29,7 +29,8 @@ public class Akino_Interactions : MonoBehaviour
 
         #region DA JUICE
         float angle = Mathf.Atan2(-aimRotation.x, aimRotation.y) * Mathf.Rad2Deg;
-        lookTarget.rotation = Quaternion.Euler(0, 0, angle);
+        lookTarget.parent.transform.rotation = Quaternion.Euler(0, 0, angle);
+        pointer.position = Vector2.Lerp(pointer.position, lookTarget.position, 25f * Time.deltaTime);
         pointer.rotation = Quaternion.Lerp(pointer.rotation, lookTarget.rotation, 50f * Time.deltaTime);
         #endregion
 
