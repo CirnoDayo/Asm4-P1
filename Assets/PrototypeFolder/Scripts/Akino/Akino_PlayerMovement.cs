@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class Akino_PlayerMovement : MonoBehaviour
 {
-    [Range(0, 20)] public float moveSpeed;
-    
+    [Range(0, 20)] float moveSpeed;
+
     Controls controls;
     Vector2 movement;
     Rigidbody2D rb;
@@ -20,15 +20,19 @@ public class Akino_PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         controls.Enable();
-        controls.PlayerMovement.Move.performed += OnMove;
-        controls.PlayerMovement.Move.canceled += OnUnmove;
+        controls.Player.Move.performed += OnMove;
+        controls.Player.Move.canceled += OnUnmove;
+        controls.Player.Interact.started += Interact;
+        controls.Player.Interact.canceled += UnInteract;
     }
 
     private void OnDisable()
     {
         controls.Disable();
-        controls.PlayerMovement.Move.performed -= OnMove;
-        controls.PlayerMovement.Move.canceled -= OnUnmove;
+        controls.Player.Move.performed -= OnMove;
+        controls.Player.Move.canceled -= OnUnmove;
+        controls.Player.Interact.started -= Interact;
+        controls.Player.Interact.canceled -= UnInteract;
     }
 
     private void FixedUpdate()
@@ -44,5 +48,15 @@ public class Akino_PlayerMovement : MonoBehaviour
     private void OnUnmove(InputAction.CallbackContext context)
     {
         movement = Vector2.zero;
+    }
+
+    public void Interact(InputAction.CallbackContext context)
+    {
+        Akino_Interactions.keyboardInput = true;
+    }
+
+    public void UnInteract(InputAction.CallbackContext context)
+    {
+        Akino_Interactions.keyboardInput = false;
     }
 }
