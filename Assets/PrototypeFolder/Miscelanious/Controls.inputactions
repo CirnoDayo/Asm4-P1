@@ -28,7 +28,7 @@
                 {
                     "name": "Arrows",
                     "id": "bfdf9583-9416-4086-bf95-d8d95c33bdcf",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=1)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -139,6 +139,17 @@
                     "name": "",
                     "id": "4dce0468-e31b-440f-8ad5-49f1ca65b0e6",
                     "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0130678f-7eba-474b-bde9-707b411f0877",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

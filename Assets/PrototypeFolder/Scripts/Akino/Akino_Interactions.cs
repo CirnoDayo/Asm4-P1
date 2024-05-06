@@ -4,44 +4,68 @@ using UnityEngine;
 
 public class Akino_Interactions : MonoBehaviour
 {
+    public Transform pointer;
+    public Transform lookTarget;
+
     public static bool keyboardInput = false;
+    public static Vector2 aimRotation;
 
     bool input;
-    bool lastToggledInput;
+    bool inputReceived;
     bool grabbing;
+    Transform grabbedObject;
     LayerMask layerMask;
+
+    private void Start()
+    {
+        pointer = GameObject.Find("Pointer").transform;
+        lookTarget = GameObject.Find("LookTarget").transform.parent;
+    }
 
     private void Update()
     {
-        Debug.Log(keyboardInput);
-        CheckInput();
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, 1f, layerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, aimRotation, 1.5f, layerMask);
         Transform thingInRange = hit.transform;
 
-        if (!grabbing)
+        #region DA JUICE
+        float angle = Mathf.Atan2(-aimRotation.x, aimRotation.y) * Mathf.Rad2Deg;
+        lookTarget.rotation = Quaternion.Euler(0, 0, angle);
+        pointer.rotation = Quaternion.Lerp(pointer.rotation, lookTarget.rotation, 50f * Time.deltaTime);
+        #endregion
+
+        if (keyboardInput && thingInRange != null)
         {
-            layerMask = LayerMask.GetMask("Interactable");
-            if (thingInRange != null && input)
+            if (!inputReceived)
             {
-                grabbing = true;
+                input = true;
+                inputReceived = true;
             }
         }
         else
+            inputReceived = false;
+
+        if (input && thingInRange != null)
         {
-            layerMask = LayerMask.GetMask("Placeable");
-            if (thingInRange != null && input)
+            if (grabbing)
             {
                 grabbing = false;
+                grabbedObject.position = thingInRange.position;
+                grabbedObject = null;
+                input = false;
+            }
+            else
+            {
+                grabbedObject = thingInRange;
+                grabbing = true;
+                input = false;
             }
         }
-    }
-
-    private void CheckInput()
-    {
-        if (keyboardInput)
+        if (grabbing)
         {
-            input = !input;
-            lastToggledInput = input;
+            grabbedObject.transform.position = transform.position;
+            layerMask = LayerMask.GetMask("Placeable");
         }
+        else
+            layerMask = LayerMask.GetMask("Interactable");
     }
 }
