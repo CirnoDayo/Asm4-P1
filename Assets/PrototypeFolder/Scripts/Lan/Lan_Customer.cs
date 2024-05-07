@@ -15,8 +15,10 @@ public class Lan_Customer : MonoBehaviour
     private void GenerateRequest()
     {
         int foodIndex = Random.Range(0, foodIcons.Count);
-        Transform transform = requestPopup.transform;
-        GameObject foodRequest = Instantiate(foodIcons[foodIndex], transform);
+        Transform placeToInstantiate = requestPopup.transform;
+        Debug.Log(requestPopup.transform);  
+        GameObject foodRequest = Instantiate(foodIcons[foodIndex], placeToInstantiate);
+        foodRequest.transform.localPosition = Vector3.zero;
         
     }
 }
