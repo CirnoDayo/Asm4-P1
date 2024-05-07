@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Lan_Chair
   - Lan_Customer
+  - Lan_FoodItem
   layers:
   - Default
   - TransparentFX

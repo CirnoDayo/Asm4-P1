@@ -210,13 +210,12 @@ MonoBehaviour:
   foodIcons:
   - {fileID: 5075488795942982591, guid: 493465774f4a9d44d8819e285445c9e4, type: 3}
   - {fileID: 6033180709998122342, guid: aa81e783578bf204eb77f377f9229991, type: 3}
-  - {fileID: 1260181104359283141, guid: f83ee420f24293d4e84faaad65be9617, type: 3}
+  - {fileID: 4203277687268143865, guid: a0c0199bd3480994dbc2ab479354d359, type: 3}
   - {fileID: 3237291461967548962, guid: d66c1e59c3e03794d9139150385db189, type: 3}
-  - {fileID: 752315269259803877, guid: bc1663d5fa382624887b2cbb62063ff9, type: 3}
+  - {fileID: 4622714051859885277, guid: a51dd8cabc9987c48a1a2f9435ceff5c, type: 3}
   - {fileID: 3342370718807326286, guid: 03c22639e405e3747ba267afa1a1064b, type: 3}
   requestPopup: {fileID: 2018412127944349854}
   requestedFoods: []
-  chairPositions: []
   isBeingServed: 0
 --- !u!114 &2643792902096789771
 MonoBehaviour:
