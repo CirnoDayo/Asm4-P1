@@ -14,8 +14,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Lan_SeatManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_Customer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_PlaceholderScript.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -96,7 +96,7 @@
       <workItem from="1714543720012" duration="34000" />
       <workItem from="1715062872848" duration="1453000" />
       <workItem from="1715067631665" duration="1555000" />
-      <workItem from="1715069787157" duration="8393000" />
+      <workItem from="1715069787157" duration="12027000" />
     </task>
     <servers />
   </component>

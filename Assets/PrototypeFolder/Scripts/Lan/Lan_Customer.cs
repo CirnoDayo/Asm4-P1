@@ -9,10 +9,11 @@ public class Lan_Customer : MonoBehaviour
 {
     public List<GameObject> foodIcons; 
     public GameObject requestPopup;
-    //public Lan_ChairFinding[] targetList;
     private int targetIndex;
-    [SerializeField] private List<Transform> chairPositions;
+    public List<string> requestedFoods = new List<string>();
+    //[SerializeField] private List<Transform> chairPositions;
     private NavMeshAgent agent;
+    public bool isBeingServed = false;
     
 
     private void Start()
@@ -32,12 +33,27 @@ public class Lan_Customer : MonoBehaviour
         }
     }
     
-    private void GenerateRequest()
+    void GenerateRequest()
     {
         int foodIndex = Random.Range(0, foodIcons.Count);
-        Transform placeToInstantiate = requestPopup.transform;
-        GameObject foodRequest = Instantiate(foodIcons[foodIndex], placeToInstantiate);
+        GameObject foodRequest = Instantiate(foodIcons[foodIndex], requestPopup.transform);
         foodRequest.transform.localPosition = Vector3.zero;
+        requestedFoods.Add(foodIcons[foodIndex].name); 
+        /*for (int i = 0; i < Random.Range(1, 4); i++)
+        {
+            
+        }*/
     }
-    
+    public void ServeCustomer()
+    {
+        isBeingServed = true;
+        StartCoroutine(EatingRoutine());
+    }
+
+    IEnumerator EatingRoutine()
+    {
+        yield return new WaitForSeconds(5);
+        Lan_SeatManager.Instance.MakeSeatAvailable(transform);
+        Destroy(gameObject);
+    }
 }
