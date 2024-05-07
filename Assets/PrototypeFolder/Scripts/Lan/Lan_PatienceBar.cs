@@ -8,6 +8,7 @@ public class Lan_PatienceBar : MonoBehaviour
     public Image patienceBar;
     public float maxPatience = 30f; // Max time the customer will wait
     private float patienceLeft;
+    public bool isBeingServed = false;
 
     private void Start()
     {
@@ -17,12 +18,19 @@ public class Lan_PatienceBar : MonoBehaviour
 
     private void Update()
     {
+        if (!isBeingServed)
+        {
         patienceLeft -= Time.deltaTime;
         patienceBar.fillAmount = patienceLeft / maxPatience;
 
         if (patienceLeft <= 0)
         {
             Destroy(gameObject);
+        }
+        }
+        else
+        {
+            patienceBar.fillAmount = patienceLeft / maxPatience;
         }
     }
 }

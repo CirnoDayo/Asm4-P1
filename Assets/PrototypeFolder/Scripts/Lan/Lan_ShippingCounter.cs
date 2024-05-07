@@ -15,17 +15,33 @@ public class ShippingCounter : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(raycastOrigin.position, Vector2.right, raycastLength, foodLayer);
         if (hit.collider != null && hit.collider.CompareTag("Lan_FoodItem"))
         {
+            Debug.Log(hit.transform.name + " have been delivered");
             ProcessFoodItem(hit.collider);
-            Debug.Log(hit.transform.name +" have been delivered");
         }
     }
 
     void ProcessFoodItem(Collider2D item)
     {
-        // Process the food item that was hit by the ray
-        currentOrder.Add(item.gameObject.name);
+        string foodName = ExtractBaseFoodName(item.gameObject.name);
         Destroy(item.gameObject); // Remove the food item from the scene
-        CheckOrders();
+
+        if (Lan_GameManager.Instance.ProcessOrder(foodName))
+        {
+            Debug.Log(foodName + " has been served!");
+        }
+        else
+        {
+            Debug.Log("No one ordered this dish: " + foodName);
+        }
+    }
+    string ExtractBaseFoodName(string fullName)
+    {
+        int cloneIndex = fullName.IndexOf("(Clone)");
+        if (cloneIndex > -1)
+        {
+            return fullName.Substring(0, cloneIndex).Trim();
+        }
+        return fullName;
     }
 
     void CheckOrders()
@@ -34,6 +50,7 @@ public class ShippingCounter : MonoBehaviour
         {
             if (!customer.isBeingServed && HasMatchingOrder(customer.requestedFoods, currentOrder))
             {
+                
                 customer.ServeCustomer();
                 currentOrder.Clear(); // Clear the order list after serving
                 break; // Exit the loop after serving one customer

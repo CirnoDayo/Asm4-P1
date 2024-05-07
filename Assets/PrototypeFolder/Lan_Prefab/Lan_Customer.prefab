@@ -208,12 +208,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodIcons:
-  - {fileID: 5075488795942982591, guid: 493465774f4a9d44d8819e285445c9e4, type: 3}
-  - {fileID: 6033180709998122342, guid: aa81e783578bf204eb77f377f9229991, type: 3}
-  - {fileID: 4203277687268143865, guid: a0c0199bd3480994dbc2ab479354d359, type: 3}
-  - {fileID: 3237291461967548962, guid: d66c1e59c3e03794d9139150385db189, type: 3}
-  - {fileID: 4622714051859885277, guid: a51dd8cabc9987c48a1a2f9435ceff5c, type: 3}
-  - {fileID: 3342370718807326286, guid: 03c22639e405e3747ba267afa1a1064b, type: 3}
+  - {fileID: 5075488795942982591, guid: ddd8a6226e7d38e4a947fde10585f507, type: 3}
+  - {fileID: 6033180709998122342, guid: b152bae5bf7b6d443b3341fc5079444a, type: 3}
+  - {fileID: 4203277687268143865, guid: ab98fd054ab9a1646adaadcd513cf450, type: 3}
+  - {fileID: 3237291461967548962, guid: 064cc3a00c0904a4bafd8a94f883bedf, type: 3}
+  - {fileID: 4622714051859885277, guid: f827c3aa42db95e46910949189ee179b, type: 3}
+  - {fileID: 3342370718807326286, guid: c9cf1e8fd285cde40aa41f09c9e9c056, type: 3}
   requestPopup: {fileID: 2018412127944349854}
   requestedFoods: []
   isBeingServed: 0

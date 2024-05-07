@@ -14,9 +14,9 @@ public class Lan_Customer : MonoBehaviour
     //[SerializeField] private List<Transform> chairPositions;
     private NavMeshAgent agent;
     public bool isBeingServed = false;
-    
+    public Lan_PatienceBar PatienceBar;
 
-    private void Start()
+    void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
@@ -25,28 +25,35 @@ public class Lan_Customer : MonoBehaviour
         if (seat != null)
         {
             agent.SetDestination(seat.position);
-            GenerateRequest();
+            List<string> requests = GenerateRequest();
+            Lan_GameManager.Instance.RegisterCustomer(this, requests);
         }
         else
         {
             Debug.Log("No available seats.");
         }
+
+        PatienceBar = GetComponent<Lan_PatienceBar>();
     }
     
-    void GenerateRequest()
+    List<string> GenerateRequest()
     {
-        int foodIndex = Random.Range(0, foodIcons.Count);
-        GameObject foodRequest = Instantiate(foodIcons[foodIndex], requestPopup.transform);
-        foodRequest.transform.localPosition = Vector3.zero;
-        requestedFoods.Add(foodIcons[foodIndex].name); 
-        /*for (int i = 0; i < Random.Range(1, 4); i++)
-        {
-            
-        }*/
+        List<string> requests = new List<string>();
+            int foodIndex = Random.Range(0, foodIcons.Count);
+            GameObject foodRequest = Instantiate(foodIcons[foodIndex], requestPopup.transform);
+            foodRequest.transform.localPosition = Vector3.zero;
+            requests.Add(foodIcons[foodIndex].name);
+            Debug.Log("food request");
+       // for (int i = 0; i < Random.Range(1, 4); i++)
+        //{
+        //}
+        return requests;
     }
     public void ServeCustomer()
     {
         isBeingServed = true;
+        requestPopup.SetActive(false);
+        PatienceBar.isBeingServed = true;
         StartCoroutine(EatingRoutine());
     }
 
