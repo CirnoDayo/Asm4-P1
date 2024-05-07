@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="41b7a916-ab92-49d9-ad02-1093e53f3259" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Thong Coding Progress.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thong Coding Progress.unity" afterDir="false" />
-    </list>
+    <list default="true" id="41b7a916-ab92-49d9-ad02-1093e53f3259" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +12,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_Customer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -26,13 +30,18 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\ADMIN\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\ADMIN\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\ADMIN\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\s3979326\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\s3979326\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\s3979326\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -84,6 +93,7 @@
       <updated>1714543650332</updated>
       <workItem from="1714543661190" duration="22000" />
       <workItem from="1714543720012" duration="34000" />
+      <workItem from="1715062872848" duration="1453000" />
     </task>
     <servers />
   </component>
