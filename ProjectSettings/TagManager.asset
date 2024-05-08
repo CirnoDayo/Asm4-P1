@@ -7,6 +7,10 @@ TagManager:
   - Lan_Chair
   - Lan_Customer
   - Lan_FoodItem
+  - Storage
+  - Cut
+  - Place
+  - Pickup
   layers:
   - Default
   - TransparentFX
