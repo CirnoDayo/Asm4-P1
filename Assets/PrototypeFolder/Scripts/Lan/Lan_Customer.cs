@@ -15,6 +15,7 @@ public class Lan_Customer : MonoBehaviour
     private NavMeshAgent agent;
     public bool isBeingServed = false;
     public Lan_PatienceBar PatienceBar;
+    public Transform assignedSeat;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class Lan_Customer : MonoBehaviour
         Transform seat = Lan_SeatManager.Instance.GetAvailableSeat();
         if (seat != null)
         {
+            assignedSeat = seat;
             agent.SetDestination(seat.position);
             List<string> requests = GenerateRequest();
             Lan_GameManager.Instance.RegisterCustomer(this, requests);
@@ -43,7 +45,7 @@ public class Lan_Customer : MonoBehaviour
             GameObject foodRequest = Instantiate(foodIcons[foodIndex], requestPopup.transform);
             foodRequest.transform.localPosition = Vector3.zero;
             requests.Add(foodIcons[foodIndex].name);
-            Debug.Log("food request");
+            //Debug.Log("food request");
        // for (int i = 0; i < Random.Range(1, 4); i++)
         //{
         //}
@@ -60,7 +62,13 @@ public class Lan_Customer : MonoBehaviour
     IEnumerator EatingRoutine()
     {
         yield return new WaitForSeconds(5);
-        Lan_SeatManager.Instance.MakeSeatAvailable(transform);
+        Lan_SeatManager.Instance.MakeSeatAvailable(assignedSeat);
+        GoAway();
         //Destroy(gameObject);
+    }
+
+    public void GoAway()
+    {
+        Destroy(gameObject,1f);
     }
 }

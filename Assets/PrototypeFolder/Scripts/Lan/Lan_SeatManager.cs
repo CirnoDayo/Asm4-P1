@@ -34,12 +34,12 @@ public class Lan_SeatManager : MonoBehaviour
 
     public Transform GetAvailableSeat()
     {
-        foreach (Transform seat in availableSeats)
+        foreach (var seat in seatOccupancy)
         {
-            if (!seatOccupancy[seat]) 
+            if (!seat.Value)
             {
-                seatOccupancy[seat] = true; 
-                return seat;
+                seatOccupancy[seat.Key] = true;
+                return seat.Key;
             }
         }
         return null; 
@@ -47,11 +47,10 @@ public class Lan_SeatManager : MonoBehaviour
 
     public void MakeSeatAvailable(Transform seat)
     {
-        if (seatOccupancy.ContainsKey(seat))
+        if (seat != null && seatOccupancy.ContainsKey(seat) && seatOccupancy[seat])
         {
-            seatOccupancy[seat] = false; 
-            if (!availableSeats.Contains(seat))
-                availableSeats.Add(seat); 
+            seatOccupancy[seat] = false; // Mark the seat as available
+            Debug.Log("Free the seat");
         }
     }
 

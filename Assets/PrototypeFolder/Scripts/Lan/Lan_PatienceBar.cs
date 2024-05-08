@@ -9,11 +9,13 @@ public class Lan_PatienceBar : MonoBehaviour
     public float maxPatience = 30f; // Max time the customer will wait
     private float patienceLeft;
     public bool isBeingServed = false;
+    public Lan_Customer LanCustomer;
 
     private void Start()
     {
         patienceLeft = maxPatience;
         patienceBar.fillAmount = 1;
+        LanCustomer = FindObjectOfType<Lan_Customer>();
     }
 
     private void Update()
@@ -25,7 +27,8 @@ public class Lan_PatienceBar : MonoBehaviour
 
         if (patienceLeft <= 0)
         {
-            Destroy(gameObject);
+            Lan_SeatManager.Instance.MakeSeatAvailable(LanCustomer.assignedSeat);
+            LanCustomer.GoAway();
         }
         }
         else

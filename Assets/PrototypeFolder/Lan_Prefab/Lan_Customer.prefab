@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patienceBar: {fileID: 4617357754727162482}
-  maxPatience: 30
+  maxPatience: 10
   isBeingServed: 0
 --- !u!195 &4665659206612157211
 NavMeshAgent:
