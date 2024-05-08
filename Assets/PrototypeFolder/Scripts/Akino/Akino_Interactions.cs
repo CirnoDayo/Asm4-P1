@@ -14,6 +14,7 @@ public class Akino_Interactions : MonoBehaviour
     bool inputReceived;
     bool grabbing;
     Transform grabbedObject;
+    Transform thingInRange;
     LayerMask layerMask;
 
     private void Start()
@@ -24,8 +25,13 @@ public class Akino_Interactions : MonoBehaviour
 
     private void Update()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, aimRotation, 1.5f, layerMask);
-        Transform thingInRange = hit.transform;
+        if (keyboardInput)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, aimRotation, 1.5f, layerMask);
+            thingInRange = hit.transform;
+        }
+        else
+            thingInRange = null;
 
         #region DA JUICE
         float angle = Mathf.Atan2(-aimRotation.x, aimRotation.y) * Mathf.Rad2Deg;
@@ -45,6 +51,7 @@ public class Akino_Interactions : MonoBehaviour
         else
             inputReceived = false;
 
+        #region Object Interacting
         if (input && thingInRange != null)
         {
             if (grabbing)
@@ -68,5 +75,6 @@ public class Akino_Interactions : MonoBehaviour
         }
         else
             layerMask = LayerMask.GetMask("Interactable");
+        #endregion
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
 
-public class Akino_PlayerMovement : MonoBehaviour
+public class Akino_PlayerControls : MonoBehaviour
 {
     [Range(0, 20)] public float moveSpeed = 10f;
 
