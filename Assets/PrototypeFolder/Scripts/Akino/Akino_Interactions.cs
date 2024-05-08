@@ -7,7 +7,7 @@ public class Akino_Interactions : MonoBehaviour
     public Transform pointer;
     public Transform lookTarget;
 
-    public static bool keyboardInput = false;
+    public static bool externalInput = false;
     public static Vector2 aimRotation;
     public static bool grabbing = false;
 
@@ -26,7 +26,7 @@ public class Akino_Interactions : MonoBehaviour
     private void Update()
     {
         #region Input
-        if (keyboardInput)
+        if (externalInput)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, aimRotation, 1.5f, layerMask);
             thingInRange = hit.transform;
@@ -35,7 +35,7 @@ public class Akino_Interactions : MonoBehaviour
             thingInRange = null;
 
 
-        if (keyboardInput && thingInRange != null)
+        if (externalInput && thingInRange != null)
         {
             if (!inputReceived)
             {
@@ -89,6 +89,7 @@ public class Akino_Interactions : MonoBehaviour
         #region Orange Juice
         float angle = Mathf.Atan2(-aimRotation.x, aimRotation.y) * Mathf.Rad2Deg;
         lookTarget.parent.transform.rotation = Quaternion.Euler(0, 0, angle);
+
         pointer.position = Vector2.Lerp(pointer.position, lookTarget.position, 25f * Time.deltaTime);
         pointer.rotation = Quaternion.Lerp(pointer.rotation, lookTarget.rotation, 50f * Time.deltaTime);
 
