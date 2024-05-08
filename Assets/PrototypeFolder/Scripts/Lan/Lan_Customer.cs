@@ -61,6 +61,6 @@ public class Lan_Customer : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         Lan_SeatManager.Instance.MakeSeatAvailable(transform);
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }
