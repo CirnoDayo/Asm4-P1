@@ -32,17 +32,16 @@ public class Lan_GameManager : MonoBehaviour
     }
     public bool ProcessOrder(string deliveredFood)
     {
-        // Loop through each entry in the customerRequests dictionary
-        foreach (var entry in customerRequests)
+        // Loop through the customers list to maintain the order they were added
+        foreach (var customer in customers)
         {
-            Lan_Customer customer = entry.Key;
-            List<string> requests = entry.Value;
-
-            
-            if (!customer.isBeingServed && requests.Contains(deliveredFood))
+            if (customerRequests.TryGetValue(customer, out List<string> requests))
             {
-                ServeCustomer(customer);
-                return true;
+                if (!customer.isBeingServed && requests.Contains(deliveredFood))
+                {
+                    ServeCustomer(customer);
+                    return true; // Return true as soon as one matching customer is found
+                }
             }
         }
         return false; // Return false if no matching customer is found

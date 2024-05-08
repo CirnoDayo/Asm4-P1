@@ -217,6 +217,7 @@ MonoBehaviour:
   requestPopup: {fileID: 2018412127944349854}
   requestedFoods: []
   isBeingServed: 0
+  PatienceBar: {fileID: 0}
 --- !u!114 &2643792902096789771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patienceBar: {fileID: 4617357754727162482}
   maxPatience: 30
+  isBeingServed: 0
 --- !u!195 &4665659206612157211
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -247,7 +249,7 @@ NavMeshAgent:
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 1.6
   m_BaseOffset: 0.8
