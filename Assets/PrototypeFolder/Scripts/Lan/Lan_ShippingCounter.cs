@@ -13,7 +13,7 @@ public class ShippingCounter : MonoBehaviour
     {
         // Cast a ray forward from the raycast origin
         RaycastHit2D hit = Physics2D.Raycast(raycastOrigin.position, Vector2.right, raycastLength, foodLayer);
-        if (hit.collider != null && hit.collider.CompareTag("Lan_FoodItem"))
+        if (hit.collider != null && hit.collider.CompareTag("Pickup"))
         {
             Debug.Log(hit.transform.name + " have been delivered");
             ProcessFoodItem(hit.collider);
@@ -23,15 +23,17 @@ public class ShippingCounter : MonoBehaviour
     void ProcessFoodItem(Collider2D item)
     {
         string foodName = ExtractBaseFoodName(item.gameObject.name);
+        string cookingMethod = GetCookingMethod(item.gameObject); // Assuming you have a way to determine this
         Destroy(item.gameObject); // Remove the food item from the scene
 
-        if (Lan_GameManager.Instance.ProcessOrder(foodName))
+        // Call the new ProcessOrder method with both food name and cooking method
+        if (Lan_GameManager.Instance.ProcessOrder(foodName, cookingMethod))
         {
-            Debug.Log(foodName + " has been served!");
+            Debug.Log(foodName + " with " + cookingMethod + " has been served!");
         }
         else
         {
-            Debug.Log("No one ordered this dish: " + foodName);
+            Debug.Log("No one ordered this dish: " + foodName + " with " + cookingMethod);
         }
     }
     string ExtractBaseFoodName(string fullName)
@@ -43,6 +45,19 @@ public class ShippingCounter : MonoBehaviour
         }
         return fullName;
     }
+    string GetCookingMethod(GameObject foodItem)
+    {
+        Lan_FoodItem foodComponent = foodItem.GetComponent<Lan_FoodItem>();
+        if (foodComponent != null)
+        {
+            if (foodComponent.IsCooked)
+                return "Cooked";  // Return "Cooked" if the food has been cooked
+            if (foodComponent.IsChopped)
+                return "Chopped";  // Return "Chopped" if the food has been chopped
+        }
+        return "None";  // Return "None" if no specific cooking method has been applied
+    }
+
 
     void CheckOrders()
     {

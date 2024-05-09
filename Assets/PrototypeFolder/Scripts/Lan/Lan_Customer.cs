@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 public class Lan_Customer : MonoBehaviour
 {
     public List<GameObject> foodIcons; 
+    public List<GameObject> cookingMethodIcons; 
     public GameObject requestPopup;
     private int targetIndex;
     public List<string> requestedFoods = new List<string>();
@@ -27,8 +28,8 @@ public class Lan_Customer : MonoBehaviour
         {
             assignedSeat = seat;
             agent.SetDestination(seat.position);
-            List<string> requests = GenerateRequest();
-            Lan_GameManager.Instance.RegisterCustomer(this, requests);
+            List<Lan_GameManager.FoodRequest> requests = GenerateRequest();
+            RegisterCustomer(requests);
         }
         else
         {
@@ -37,18 +38,28 @@ public class Lan_Customer : MonoBehaviour
 
         PatienceBar = GetComponent<Lan_PatienceBar>();
     }
-    
-    List<string> GenerateRequest()
+
+    private void RegisterCustomer(List<Lan_GameManager.FoodRequest> requests)
     {
-        List<string> requests = new List<string>();
-            int foodIndex = Random.Range(0, foodIcons.Count);
-            GameObject foodRequest = Instantiate(foodIcons[foodIndex], requestPopup.transform);
-            foodRequest.transform.localPosition = Vector3.zero;
-            requests.Add(foodIcons[foodIndex].name);
-            //Debug.Log("food request");
-       // for (int i = 0; i < Random.Range(1, 4); i++)
-        //{
-        //}
+        Lan_GameManager.Instance.RegisterCustomer(this, requests);
+    }
+    
+    public List<Lan_GameManager.FoodRequest> GenerateRequest()
+    {
+        List<Lan_GameManager.FoodRequest> requests = new List<Lan_GameManager.FoodRequest>();
+        int foodIndex = Random.Range(0, foodIcons.Count);
+        int methodIndex = Random.Range(0, cookingMethodIcons.Count);
+
+        GameObject foodRequest = Instantiate(foodIcons[foodIndex], requestPopup.transform);
+        GameObject methodRequest = Instantiate(cookingMethodIcons[methodIndex], requestPopup.transform);
+        foodRequest.transform.localPosition = new Vector3(-0.75f, 0, 0);
+        methodRequest.transform.localPosition = new Vector3(0.75f, 0, 0);
+
+        Lan_GameManager.FoodRequest newRequest = new Lan_GameManager.FoodRequest(foodIcons[foodIndex].name, cookingMethodIcons[methodIndex].name);
+        requests.Add(newRequest);
+
+        Debug.Log($"Generated Request - Food: {newRequest.FoodName}, Method: {newRequest.CookingMethod}");
+
         return requests;
     }
     public void ServeCustomer()

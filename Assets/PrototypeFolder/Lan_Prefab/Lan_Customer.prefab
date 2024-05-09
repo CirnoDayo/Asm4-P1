@@ -214,10 +214,14 @@ MonoBehaviour:
   - {fileID: 3237291461967548962, guid: 064cc3a00c0904a4bafd8a94f883bedf, type: 3}
   - {fileID: 4622714051859885277, guid: f827c3aa42db95e46910949189ee179b, type: 3}
   - {fileID: 3342370718807326286, guid: c9cf1e8fd285cde40aa41f09c9e9c056, type: 3}
+  cookingMethodIcons:
+  - {fileID: 6265022002987575802, guid: 084988212da18544682eff0c940b66d1, type: 3}
+  - {fileID: 7653945144263646248, guid: f04b67f780ce07e4ba128ae6a4de5038, type: 3}
   requestPopup: {fileID: 2018412127944349854}
   requestedFoods: []
   isBeingServed: 0
   PatienceBar: {fileID: 0}
+  assignedSeat: {fileID: 0}
 --- !u!114 &2643792902096789771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,8 +235,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patienceBar: {fileID: 4617357754727162482}
-  maxPatience: 10
+  maxPatience: 30
   isBeingServed: 0
+  LanCustomer: {fileID: 0}
 --- !u!195 &4665659206612157211
 NavMeshAgent:
   m_ObjectHideFlags: 0
