@@ -13,11 +13,9 @@ public class Akino_EventManager : MonoBehaviour
     }
 
     public event Action OnFridgeInteract;
+
     public void FridgeInteract()
     {
-        if (OnFridgeInteract != null)
-        {
-            OnFridgeInteract();
-        }
+         OnFridgeInteract();
     }
 }

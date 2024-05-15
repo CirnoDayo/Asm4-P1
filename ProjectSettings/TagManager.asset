@@ -8,9 +8,9 @@ TagManager:
   - Lan_Customer
   - Lan_FoodItem
   - Storage
-  - Cut
   - Place
   - Pickup
+  - Cook
   layers:
   - Default
   - TransparentFX

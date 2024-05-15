@@ -1,41 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Lan_PlaceholderScript : MonoBehaviour
 {
+    public GameObject ingredientsMenu;
+    public Button[] buttonIndex;
+    
     public GameObject Beef;
     public GameObject Fish;
-    public GameObject Carrot;
     public GameObject Lettuce;
-    public GameObject Rice;
     public GameObject Noodles;
-    public List<Transform> spawningPlace;// Assign your customer prefab in the inspector
 
+    Akino_UIManager UIManager;
+    private void Start()
+    {
+        UIManager = GetComponent<Akino_UIManager>();
+        buttonIndex = ingredientsMenu.GetComponentsInChildren<Button>();
+    }
+
+    public void Input(string message)
+    {
+        switch (message)
+        {
+            case "Beef": InstantiateBeef(); break;
+            case "Fish": InstantiateFish(); break;
+            case "Lettuce": InstantiateLettuce(); break;
+            case "Noodles": InstantiateNoodles(); break;
+        }
+    }
 
     public void InstantiateBeef()
     {
-        Instantiate(Beef, spawningPlace[0].position, Quaternion.identity);
+        Instantiate(Beef, Vector2.zero, Quaternion.identity);
     }
     
     public void InstantiateFish()
     {
-        Instantiate(Fish, spawningPlace[1].position, Quaternion.identity);
+        Instantiate(Fish, Vector2.zero, Quaternion.identity);
     }
-    public void InstantiateCarrot()
-    {
-        Instantiate(Carrot, spawningPlace[2].position, Quaternion.identity);
-    }
+
     public void InstantiateLettuce()
     {
-        Instantiate(Lettuce, spawningPlace[3].position, Quaternion.identity);
+        Instantiate(Lettuce, Vector2.zero, Quaternion.identity);
     }
-    public void InstantiateRice()
-    {
-        Instantiate(Rice, spawningPlace[4].position, Quaternion.identity);
-    }
+
     public void InstantiateNoodles()
     {
-        Instantiate(Noodles, spawningPlace[5].position, Quaternion.identity);
+        Instantiate(Noodles, Vector2.zero, Quaternion.identity);
     }
 }

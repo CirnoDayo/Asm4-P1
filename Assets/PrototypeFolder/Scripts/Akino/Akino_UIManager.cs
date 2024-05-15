@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Akino_UIManager : MonoBehaviour
 {
-    public GameObject IngredientsMenu;
+    public GameObject ingredientsMenu;
 
     private void Start()
     {
-        Akino_EventManager.instance.OnFridgeInteract += ToggleIngredients;
+        Akino_EventManager.instance.OnFridgeInteract += ToggleIngredientsMenu;
     }
 
-    private void ToggleIngredients()
+    public void ToggleIngredientsMenu()
     {
-        IngredientsMenu.SetActive(!IngredientsMenu.activeSelf);
+        ingredientsMenu.SetActive(!ingredientsMenu.activeSelf);
+        Akino_ControlsManager.inMenu = ingredientsMenu.activeSelf;
     }
 }
