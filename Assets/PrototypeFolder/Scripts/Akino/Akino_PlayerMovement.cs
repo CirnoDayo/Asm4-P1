@@ -7,6 +7,7 @@ using UnityEngine.XR;
 public class Akino_PlayerMovement : MonoBehaviour
 {
     [Range(0, 20)] public float moveSpeed = 10f;
+    public Animator animator;
 
     public static Vector2 movement;
     float highestVelocity;
@@ -16,6 +17,10 @@ public class Akino_PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Verticle", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
     private void FixedUpdate()

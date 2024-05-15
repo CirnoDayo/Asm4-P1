@@ -2255,6 +2255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  animator: {fileID: 570002833}
 --- !u!212 &570002827
 SpriteRenderer:
   m_ObjectHideFlags: 0
