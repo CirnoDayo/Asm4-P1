@@ -12,10 +12,16 @@ public class Akino_EventManager : MonoBehaviour
         instance = this;
     }
 
-    public event Action OnFridgeInteract;
+    public event Action OnFridgeEnable;
+    public event Action OnFridgeDisable;
 
-    public void FridgeInteract()
+    public void FridgeEnable()
     {
-         OnFridgeInteract();
+         OnFridgeEnable();
+    }
+
+    public void FridgeDisable()
+    {
+        OnFridgeDisable();
     }
 }

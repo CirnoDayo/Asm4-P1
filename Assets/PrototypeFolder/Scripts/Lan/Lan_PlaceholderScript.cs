@@ -22,6 +22,7 @@ public class Lan_PlaceholderScript : MonoBehaviour
 
     public void Input(string message)
     {
+        Akino_EventManager.instance.FridgeDisable();
         switch (message)
         {
             case "Beef": InstantiateBeef(); break;
@@ -34,6 +35,7 @@ public class Lan_PlaceholderScript : MonoBehaviour
     public void InstantiateBeef()
     {
         Instantiate(Beef, Vector2.zero, Quaternion.identity);
+
     }
     
     public void InstantiateFish()

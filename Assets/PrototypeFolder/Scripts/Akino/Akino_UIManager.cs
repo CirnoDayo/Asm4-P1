@@ -8,12 +8,20 @@ public class Akino_UIManager : MonoBehaviour
 
     private void Start()
     {
-        Akino_EventManager.instance.OnFridgeInteract += ToggleIngredientsMenu;
+        Akino_EventManager.instance.OnFridgeEnable += EnableIngredientsMenu;
+        Akino_EventManager.instance.OnFridgeDisable += DisableIngredientsMenu;
     }
 
-    public void ToggleIngredientsMenu()
+    public void EnableIngredientsMenu()
     {
-        ingredientsMenu.SetActive(!ingredientsMenu.activeSelf);
+        ingredientsMenu.SetActive(true);
+        Akino_ControlsManager.inMenu = ingredientsMenu.activeSelf;
+    }
+
+    public void DisableIngredientsMenu()
+    {
+        
+        ingredientsMenu.SetActive(false);
         Akino_ControlsManager.inMenu = ingredientsMenu.activeSelf;
     }
 }
