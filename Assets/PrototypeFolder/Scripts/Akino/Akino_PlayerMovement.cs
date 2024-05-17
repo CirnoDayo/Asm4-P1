@@ -17,10 +17,7 @@ public class Akino_PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Verticle", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+       
     }
 
     private void FixedUpdate()
@@ -30,6 +27,10 @@ public class Akino_PlayerMovement : MonoBehaviour
         {
             Akino_Interactions.aimRotation = rb.velocity;
             highestVelocity = rb.velocity.magnitude;
+
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Speed", movement.sqrMagnitude);
         }
         if (movement == Vector2.zero)
         {
