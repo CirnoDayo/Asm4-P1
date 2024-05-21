@@ -11,4 +11,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PrototypeFolder/Scenes/Lan_Scene.unity
     guid: 2393761a22418f642b275ae4ab4dae09
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 32a0cbca20e46e048960e5429483ee9c, type: 2}

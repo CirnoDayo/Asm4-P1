@@ -8,7 +8,7 @@ using UnityEngine.XR;
 public class Akino_ControlsManager : MonoBehaviour
 {
     public static Controls controls;
-    public static bool inMenu;
+    public static bool inMenu = false;
 
     private void Awake()
     {
