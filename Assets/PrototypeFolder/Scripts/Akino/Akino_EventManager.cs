@@ -3,20 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Akino_EventManager : MonoBehaviour
+public class Akino_EventManager
 {
-    public static Akino_EventManager instance;
+    public static event Action OnFridgeToggle;
 
-    private void Awake()
+    public static void FridgeToggle()
     {
-        instance = this;
-    }
-
-    public event Action OnFridgeToggle;
-
-    public void FridgeToggle()
-    {
-         OnFridgeToggle();
+         OnFridgeToggle?.Invoke();
     }
 
 }

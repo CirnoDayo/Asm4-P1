@@ -34,20 +34,24 @@ public class Lan_PlaceholderScript : MonoBehaviour
     public void InstantiateBeef()
     {
         Instantiate(Beef, Vector2.zero, Quaternion.identity);
+        Akino_EventManager.FridgeToggle();
     }
     
     public void InstantiateFish()
     {
         Instantiate(Fish, Vector2.zero, Quaternion.identity);
+        Akino_EventManager.FridgeToggle();
     }
 
     public void InstantiateLettuce()
     {
         Instantiate(Lettuce, Vector2.zero, Quaternion.identity);
+        Akino_EventManager.FridgeToggle();
     }
 
     public void InstantiateNoodles()
     {
         Instantiate(Noodles, Vector2.zero, Quaternion.identity);
+        Akino_EventManager.FridgeToggle();
     }
 }

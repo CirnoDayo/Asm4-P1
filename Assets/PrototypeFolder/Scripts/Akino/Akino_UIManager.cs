@@ -8,7 +8,7 @@ public class Akino_UIManager : MonoBehaviour
 
     private void Start()
     {
-        Akino_EventManager.instance.OnFridgeToggle += ToggleIngredientsMenu;
+        Akino_EventManager.OnFridgeToggle += ToggleIngredientsMenu;
     }
 
     public void ToggleIngredientsMenu()

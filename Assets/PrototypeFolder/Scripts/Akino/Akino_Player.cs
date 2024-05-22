@@ -85,7 +85,7 @@ public class Akino_Player : MonoBehaviour
 
                 if (thingInRange.CompareTag("Storage"))
                 {
-                    Akino_EventManager.instance.FridgeToggle();
+                    Akino_EventManager.FridgeToggle();
                 }
             }
             else
@@ -104,7 +104,7 @@ public class Akino_Player : MonoBehaviour
 
         if (secondaryInput && Akino_ControlsManager.inMenu)
         {
-            Akino_EventManager.instance.FridgeToggle();
+            Akino_EventManager.FridgeToggle();
         }
 
         if (grabbing)

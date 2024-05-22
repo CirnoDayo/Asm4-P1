@@ -172,9 +172,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be22202326f4e1c46a311a64f25c2676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsCooked: 0
-  IsChopped: 0
-  CookingMethod: 
+  isCooked: 0
+  isChopped: 0
+  cookingMethod: 
+  cookedColor: {r: 1, g: 0, b: 0, a: 1}
+  choppedColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!114 &8654019329536902751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be22202326f4e1c46a311a64f25c2676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsCooked: 0
-  IsChopped: 0
-  CookingMethod: 
+  isCooked: 0
+  isChopped: 0
+  cookingMethod: 
+  cookedColor: {r: 1, g: 0, b: 0, a: 1}
+  choppedColor: {r: 0, g: 1, b: 0, a: 1}

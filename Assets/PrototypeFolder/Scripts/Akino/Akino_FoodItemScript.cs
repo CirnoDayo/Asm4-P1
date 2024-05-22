@@ -6,6 +6,6 @@ public class Akino_FoodItemScript : MonoBehaviour
 {
     private void Awake()
     {
-        Akino_EventManager.instance.FridgeToggle();
+        Akino_EventManager.FridgeToggle();
     }
 }

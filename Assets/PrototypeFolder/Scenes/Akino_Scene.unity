@@ -804,7 +804,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1255848711}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Akino_EventManager, Assembly-CSharp
         m_MethodName: 
         m_Mode: 1
@@ -2258,7 +2258,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1255848711}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Akino_EventManager, Assembly-CSharp
         m_MethodName: 
         m_Mode: 1
@@ -2669,7 +2669,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1255848711}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Akino_EventManager, Assembly-CSharp
         m_MethodName: 
         m_Mode: 1
@@ -6177,7 +6177,6 @@ GameObject:
   - component: {fileID: 1255848712}
   - component: {fileID: 1255848714}
   - component: {fileID: 1255848715}
-  - component: {fileID: 1255848711}
   - component: {fileID: 1255848713}
   - component: {fileID: 1255848716}
   m_Layer: 0
@@ -6187,18 +6186,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1255848711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255848710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4be6a8a7738a6874790404917b313b01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1255848712
 Transform:
   m_ObjectHideFlags: 0
@@ -6972,7 +6959,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1459681991}
   - component: {fileID: 1459681990}
-  - component: {fileID: 1459681993}
   - component: {fileID: 1459681995}
   - component: {fileID: 1459681994}
   m_Layer: 6
@@ -7049,19 +7035,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1459681993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1459681989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26be4cc73e4c1484a81fd03e647ca7c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInRange: 0
 --- !u!61 &1459681994
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8842,7 +8815,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1255848711}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Akino_EventManager, Assembly-CSharp
         m_MethodName: 
         m_Mode: 1
