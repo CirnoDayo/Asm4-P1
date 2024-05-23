@@ -12,6 +12,8 @@ public class Lan_PlaceholderScript : MonoBehaviour
     public GameObject Fish;
     public GameObject Lettuce;
     public GameObject Noodles;
+    public GameObject Rice;
+    public GameObject Carrot;
 
     Akino_UIManager UIManager;
     private void Start()
@@ -28,6 +30,9 @@ public class Lan_PlaceholderScript : MonoBehaviour
             case "Fish": InstantiateFish(); break;
             case "Lettuce": InstantiateLettuce(); break;
             case "Noodles": InstantiateNoodles(); break;
+            case "Rice": InstantiateNoodles(); break;
+            case "Carrot": InstantiateNoodles(); break;
+
         }
     }
 
@@ -52,6 +57,16 @@ public class Lan_PlaceholderScript : MonoBehaviour
     public void InstantiateNoodles()
     {
         Instantiate(Noodles, Vector2.zero, Quaternion.identity);
+        Akino_EventManager.FridgeToggle();
+    }
+    public void InstantiateRice()
+    {
+        Instantiate(Rice, Vector2.zero, Quaternion.identity);
+        Akino_EventManager.FridgeToggle();
+    }
+    public void InstantiateCarrot()
+    {
+        Instantiate(Carrot, Vector2.zero, Quaternion.identity);
         Akino_EventManager.FridgeToggle();
     }
 }

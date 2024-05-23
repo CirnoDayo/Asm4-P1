@@ -215,7 +215,6 @@ MonoBehaviour:
   - {fileID: 4622714051859885277, guid: f827c3aa42db95e46910949189ee179b, type: 3}
   - {fileID: 3342370718807326286, guid: c9cf1e8fd285cde40aa41f09c9e9c056, type: 3}
   cookingMethodIcons:
-  - {fileID: 6265022002987575802, guid: 084988212da18544682eff0c940b66d1, type: 3}
   - {fileID: 7653945144263646248, guid: f04b67f780ce07e4ba128ae6a4de5038, type: 3}
   requestPopup: {fileID: 2018412127944349854}
   requestedFoods: []

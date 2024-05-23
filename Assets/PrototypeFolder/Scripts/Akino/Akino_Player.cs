@@ -25,6 +25,14 @@ public class Akino_Player : MonoBehaviour
     float highestVelocity;
     LayerMask layerMask;
 
+    public Animator playersAnimator;
+    
+    private const string ANIM_IDLE = "Idle";
+    private const string ANIM_FRONT_WALK = "FrontWalk";
+    private const string ANIM_BACK_WALK = "BackWalk";
+    private const string ANIM_LEFT_WALK = "LeftWalk";
+    private const string ANIM_RIGHT_WALK = "RightWalk";
+
     #endregion
 
     private void Start()
@@ -33,6 +41,7 @@ public class Akino_Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         pointer = GameObject.Find("Pointer").transform;
         lookTarget = GameObject.Find("LookTarget").transform;
+        playersAnimator = FindObjectOfType<Animator>();
     }
 
     private void FixedUpdate()
@@ -129,6 +138,39 @@ public class Akino_Player : MonoBehaviour
         }
         #endregion
 
+        #endregion
+        #region Animation
+        if (movement != Vector2.zero)
+        {
+            if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
+            {
+                // Moving horizontally
+                if (movement.x > 0)
+                {
+                    playersAnimator.Play(ANIM_RIGHT_WALK);
+                }
+                else
+                {
+                    playersAnimator.Play(ANIM_LEFT_WALK);
+                }
+            }
+            else
+            {
+                // Moving vertically
+                if (movement.y > 0)
+                {
+                    playersAnimator.Play(ANIM_BACK_WALK);
+                }
+                else
+                {
+                    playersAnimator.Play(ANIM_FRONT_WALK);
+                }
+            }
+        }
+        else
+        {
+            playersAnimator.Play(ANIM_IDLE);
+        }
         #endregion
     }
 }
