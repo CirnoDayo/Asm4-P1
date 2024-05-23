@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41b7a916-ab92-49d9-ad02-1093e53f3259" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Asm4-P1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asm4-P1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lan_GameManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lan_GameManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/BeefCook.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/BeefCook.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/CarrotCook.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/CarrotCook.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/FishCook.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/FishCook.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/Lan_Customer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/Lan_Customer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/LettuceCook.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/LettuceCook.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/NoodlesCook.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/NoodlesCook.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/RiceCook.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/RiceCook.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scenes/Lan_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scenes/Lan_Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_Customer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_Customer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_PlaceholderScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_PlaceholderScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_ShippingCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_ShippingCounter.cs" afterDir="false" />
-    </list>
+    <list default="true" id="41b7a916-ab92-49d9-ad02-1093e53f3259" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,9 +45,9 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\Admin\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\s3979326\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\s3979326\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\s3979326\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -119,6 +104,7 @@
       <workItem from="1715069787157" duration="15054000" />
       <workItem from="1715105782464" duration="5764000" />
       <workItem from="1715185283324" duration="14528000" />
+      <workItem from="1716441099106" duration="1164000" />
     </task>
     <servers />
   </component>
