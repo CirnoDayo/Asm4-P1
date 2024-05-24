@@ -6010,7 +6010,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1156107905}
         m_TargetAssemblyTypeName: Akino_ControlsManager, Assembly-CSharp
-        m_MethodName: Interact
+        m_MethodName: Move
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6024,13 +6024,13 @@ MonoBehaviour:
     m_ActionName: Player/Interact[/Keyboard/z]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1156107905}
+        m_TargetAssemblyTypeName: Akino_ControlsManager, Assembly-CSharp
+        m_MethodName: Return
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6039,19 +6039,55 @@ MonoBehaviour:
     m_ActionId: d5f656dd-a670-4882-a320-b8f1a98ffebd
     m_ActionName: Player/Return[/Keyboard/x]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1156107905}
+        m_TargetAssemblyTypeName: Akino_ControlsManager, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 7de3c272-b271-440a-9f4c-e2bb8a695ae6
     m_ActionName: Menu/Interact[/Keyboard/z]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1156107905}
+        m_TargetAssemblyTypeName: Akino_ControlsManager, Assembly-CSharp
+        m_MethodName: Return
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: fa46b4e5-39da-4af2-8e84-5344b50f019c
     m_ActionName: Menu/Return[/Keyboard/x]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1156107905}
+        m_TargetAssemblyTypeName: Akino_ControlsManager, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 5f8820d3-a8fe-485b-b232-c124d5d4753e
-    m_ActionName: Menu/Navigate[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/DualShock4GamepadHID/dpad/up,/DualSenseGamepadHID/dpad/up,/DualShock4GamepadHID1/dpad/up,/DualShock4GamepadHID/dpad/down,/DualSenseGamepadHID/dpad/down,/DualShock4GamepadHID1/dpad/down,/DualShock4GamepadHID/dpad/left,/DualSenseGamepadHID/dpad/left,/DualShock4GamepadHID1/dpad/left,/DualShock4GamepadHID/dpad/right,/DualSenseGamepadHID/dpad/right,/DualShock4GamepadHID1/dpad/right,/DualShock4GamepadHID/leftStick,/DualSenseGamepadHID/leftStick,/DualShock4GamepadHID1/leftStick]
+    m_ActionName: Menu/Navigate[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/DualSenseGamepadHID/dpad/up,/DualSenseGamepadHID/dpad/down,/DualSenseGamepadHID/dpad/left,/DualSenseGamepadHID/dpad/right,/DualSenseGamepadHID/leftStick]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
