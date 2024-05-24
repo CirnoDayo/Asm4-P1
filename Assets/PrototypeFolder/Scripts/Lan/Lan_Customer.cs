@@ -17,6 +17,15 @@ public class Lan_Customer : MonoBehaviour
     public bool isBeingServed = false;
     public Lan_PatienceBar PatienceBar;
     public Transform assignedSeat;
+    
+    public Animator customerAnimator;
+
+    // Animation states
+    private const string ANIM_IDLE = "Idle";
+    private const string ANIM_FRONT_WALK = "Front";
+    private const string ANIM_BACK_WALK = "Back";
+    private const string ANIM_LEFT_WALK = "Left";
+    private const string ANIM_RIGHT_WALK = "Right";
 
     void Start()
     {
@@ -37,6 +46,7 @@ public class Lan_Customer : MonoBehaviour
         }
 
         PatienceBar = GetComponent<Lan_PatienceBar>();
+        customerAnimator = GetComponent<Animator>();
     }
 
     private void RegisterCustomer(List<Lan_GameManager.FoodRequest> requests)
@@ -81,5 +91,43 @@ public class Lan_Customer : MonoBehaviour
     public void GoAway()
     {
         Destroy(gameObject,1f);
+    }
+    void Update()
+    {
+        #region Animation
+        Vector3 velocity = agent.velocity;
+
+        if (velocity != Vector3.zero)
+        {
+            if (Mathf.Abs(velocity.x) > Mathf.Abs(velocity.y))
+            {
+                // Moving horizontally
+                if (velocity.x > 0)
+                {
+                    customerAnimator.Play(ANIM_RIGHT_WALK);
+                }
+                else
+                {
+                    customerAnimator.Play(ANIM_LEFT_WALK);
+                }
+            }
+            else
+            {
+                // Moving vertically
+                if (velocity.y > 0)
+                {
+                    customerAnimator.Play(ANIM_BACK_WALK);
+                }
+                else
+                {
+                    customerAnimator.Play(ANIM_FRONT_WALK);
+                }
+            }
+        }
+        else
+        {
+            customerAnimator.Play(ANIM_IDLE);
+        }
+        #endregion
     }
 }
