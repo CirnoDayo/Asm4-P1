@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="41b7a916-ab92-49d9-ad02-1093e53f3259" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Asm4-P1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asm4-P1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Assets/Character/back 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Assets/Character/back 1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Assets/Character/front 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Assets/Character/front 1.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scenes/Lan_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scenes/Lan_Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_CustomerSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_CustomerSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_PlaceholderScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_PlaceholderScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_Customer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_Customer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_PatienceBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_PatienceBar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_SeatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_SeatManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

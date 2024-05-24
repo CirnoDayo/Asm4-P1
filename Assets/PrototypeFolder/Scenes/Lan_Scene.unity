@@ -5899,7 +5899,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156107898}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aced885d82970d44c98b76bcb4fc3dcf, type: 3}
   m_Name: 
@@ -5908,7 +5908,7 @@ MonoBehaviour:
   - {fileID: 3609278766878730525, guid: e3ff6bd36da21fd4797903b8dc7b4044, type: 3}
   - {fileID: 3609278766878730525, guid: 030a09bf168471b499b685e59f0b47cb, type: 3}
   - {fileID: 3609278766878730525, guid: b2a8c63ef1306ea4ead83fd0dcdd6f86, type: 3}
-  spawnInterval: 10
+  spawnInterval: 2
 --- !u!4 &1156107900
 Transform:
   m_ObjectHideFlags: 0
@@ -5936,6 +5936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463f0f66d1bd6eb4580cbb417d0ed218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  availableSeats: []
 --- !u!114 &1156107902
 MonoBehaviour:
   m_ObjectHideFlags: 0

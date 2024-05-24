@@ -7,8 +7,9 @@ public class Lan_PatienceBar : MonoBehaviour
 {
     public Image patienceBar;
     public float maxPatience = 30f; // Max time the customer will wait
-    private float patienceLeft;
+    public float patienceLeft;
     public bool isBeingServed = false;
+    public bool seatWaitingMode = false;
     public Lan_Customer LanCustomer;
 
     private void Start()
@@ -20,8 +21,17 @@ public class Lan_PatienceBar : MonoBehaviour
 
     private void Update()
     {
-        if (!isBeingServed)
+        if (!isBeingServed && !seatWaitingMode)
         {
+            UpdatePatience();
+        }
+        else if (seatWaitingMode)
+        {
+            UpdateSeatWaiting();
+        }
+    }
+    private void UpdatePatience()
+    {
         patienceLeft -= Time.deltaTime;
         patienceBar.fillAmount = patienceLeft / maxPatience;
 
@@ -30,10 +40,30 @@ public class Lan_PatienceBar : MonoBehaviour
             Lan_SeatManager.Instance.MakeSeatAvailable(LanCustomer.assignedSeat);
             LanCustomer.GoAway();
         }
-        }
-        else
+    }
+
+    private void UpdateSeatWaiting()
+    {
+        patienceLeft -= Time.deltaTime * (maxPatience / 5f); // Speed up the countdown to fit 5 seconds
+        patienceBar.fillAmount = patienceLeft / maxPatience;
+
+        if (patienceLeft <= 0)
         {
-            patienceBar.fillAmount = patienceLeft / maxPatience;
+            LanCustomer.GoAway(); // No seat becomes available, customer leaves
         }
+    }
+
+    public void SetSeatWaitingMode(bool isWaiting)
+    {
+        seatWaitingMode = isWaiting;
+        if (isWaiting)
+        {
+            patienceLeft = 5f; // Reset the timer for seat waiting
+        }
+    }
+    public void ResetPatience()
+    {
+        patienceLeft = maxPatience; // Reset to full patience
+        patienceBar.fillAmount = 1; // Reset the UI element
     }
 }

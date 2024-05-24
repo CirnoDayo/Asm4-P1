@@ -4,8 +4,8 @@ using UnityEngine;
 public class Lan_SeatManager : MonoBehaviour
 {
     public static Lan_SeatManager Instance;
-    private List<Transform> availableSeats;
-    private Dictionary<Transform, bool> seatOccupancy; // Tracks whether a seat is occupied
+    public List<Transform> availableSeats;
+    public Dictionary<Transform, bool> seatOccupancy; // Tracks whether a seat is occupied
 
     private void Awake()
     {

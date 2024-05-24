@@ -27,26 +27,66 @@ public class Lan_Customer : MonoBehaviour
     private const string ANIM_LEFT_WALK = "Left";
     private const string ANIM_RIGHT_WALK = "Right";
 
+    public bool isWaitingForSeat = false;
+    public float timeStartedWaitingForSeat = float.MaxValue;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        PatienceBar = GetComponent<Lan_PatienceBar>();
+        customerAnimator = GetComponent<Animator>();
+        CheckForSeat();
+    }
+
+    
+    void CheckForSeat()
+    {
         Transform seat = Lan_SeatManager.Instance.GetAvailableSeat();
         if (seat != null)
         {
-            assignedSeat = seat;
-            agent.SetDestination(seat.position);
-            List<Lan_GameManager.FoodRequest> requests = GenerateRequest();
-            RegisterCustomer(requests);
+            AssignSeat(seat);
         }
         else
         {
             Debug.Log("No available seats.");
+            isWaitingForSeat = true;
+            PatienceBar.SetSeatWaitingMode(true);
+            StartCoroutine(CheckSeatAvailability());
+        }
+    }
+    IEnumerator CheckSeatAvailability()
+    {
+        float checkInterval = 1f; // Check for seat availability every 1 second
+        float waitTime = 5f; // Total wait time
+
+        while (isWaitingForSeat && waitTime > 0)
+        {
+            yield return new WaitForSeconds(checkInterval);
+            waitTime -= checkInterval;
+            Transform newSeat = Lan_SeatManager.Instance.GetAvailableSeat();
+            if (newSeat != null)
+            {
+                AssignSeat(newSeat);
+                break;
+            }
         }
 
-        PatienceBar = GetComponent<Lan_PatienceBar>();
-        customerAnimator = GetComponent<Animator>();
+        if (isWaitingForSeat) // If still waiting after 5 seconds
+        {
+            GoAway(); // Leave if no seat is found within the allotted time
+        }
+    }
+
+    void AssignSeat(Transform seat)
+    {
+        assignedSeat = seat;
+        agent.SetDestination(seat.position);
+        List<Lan_GameManager.FoodRequest> requests = GenerateRequest();
+        RegisterCustomer(requests);
+        isWaitingForSeat = false;
+        PatienceBar.SetSeatWaitingMode(false);
+        PatienceBar.ResetPatience(); // Reset patience to 30 seconds
     }
 
     private void RegisterCustomer(List<Lan_GameManager.FoodRequest> requests)
@@ -94,6 +134,7 @@ public class Lan_Customer : MonoBehaviour
     }
     void Update()
     {
+       
         #region Animation
         Vector3 velocity = agent.velocity;
 
