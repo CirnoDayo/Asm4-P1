@@ -52,8 +52,7 @@ public class ShippingCounter : MonoBehaviour
         {
             if (foodComponent.IsCooked)
                 return "Cooked";  // Return "Cooked" if the food has been cooked
-            if (foodComponent.IsChopped)
-                return "Chopped";  // Return "Chopped" if the food has been chopped
+             // Return "Chopped" if the food has been chopped
         }
         return "None";  // Return "None" if no specific cooking method has been applied
     }

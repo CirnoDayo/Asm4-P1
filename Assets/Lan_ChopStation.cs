@@ -20,7 +20,7 @@ public class Lan_ChopStation : MonoBehaviour
             // Process the first food item found that hasn't been processed yet
             foreach (Collider2D collider in colliders)
             {
-                if (collider.CompareTag("Pickup") && collider.gameObject.GetComponent<Lan_FoodItem>() && !collider.gameObject.GetComponent<Lan_FoodItem>().IsChopped && !collider.gameObject.GetComponent<Lan_FoodItem>().IsCooked)
+                if (collider.CompareTag("Pickup") && collider.gameObject.GetComponent<Lan_FoodItem>()  && !collider.gameObject.GetComponent<Lan_FoodItem>().IsCooked)
                 {
                     currentFoodItem = collider.gameObject;
                     StartCoroutine(ProcessFood());
@@ -54,7 +54,7 @@ public class Lan_ChopStation : MonoBehaviour
         progressBar.fillAmount = 1.0f;
         if (currentFoodItem != null)
         {
-            currentFoodItem.GetComponent<Lan_FoodItem>().IsChopped = true; // Assume food item can be chopped
+            //currentFoodItem.GetComponent<Lan_FoodItem>().IsChopped = true; // Assume food item can be chopped
         }
         isProcessing = false;
     }

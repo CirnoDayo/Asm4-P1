@@ -22,7 +22,7 @@ public class Lan_CookStation : MonoBehaviour
             foreach (Collider2D collider in colliders)
             {
                 if (collider.CompareTag("Pickup") && collider.gameObject.GetComponent<Lan_FoodItem>() &&
-                    !collider.gameObject.GetComponent<Lan_FoodItem>().IsCooked && !collider.gameObject.GetComponent<Lan_FoodItem>().IsChopped)
+                    !collider.gameObject.GetComponent<Lan_FoodItem>().IsCooked)
                 {
                     currentFoodItem = collider.gameObject;
                     StartCoroutine(ProcessFood());

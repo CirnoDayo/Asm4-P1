@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: -4692936170843078666}
   - component: {fileID: 2372943882994900593}
   - component: {fileID: 4135525143485427783}
-  - component: {fileID: 8654019329536902751}
   m_Layer: 6
   m_Name: BeefCook
   m_TagString: Pickup
@@ -173,24 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCooked: 0
-  isChopped: 0
-  cookingMethod: 
-  cookedColor: {r: 1, g: 0, b: 0, a: 1}
-  choppedColor: {r: 0, g: 1, b: 0, a: 1}
---- !u!114 &8654019329536902751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5075488795942982591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be22202326f4e1c46a311a64f25c2676, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isCooked: 0
-  isChopped: 0
-  cookingMethod: 
-  cookedColor: {r: 1, g: 0, b: 0, a: 1}
-  choppedColor: {r: 0, g: 1, b: 0, a: 1}
+  cookedSprite: {fileID: 21300000, guid: 52c528d63db64494d9c2573ba227b921, type: 3}

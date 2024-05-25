@@ -2,13 +2,9 @@ using UnityEngine;
 
 public class Lan_FoodItem : MonoBehaviour
 {
-    public bool isCooked = false;
-    public bool isChopped = false;
-    public string cookingMethod = ""; // Stores the method used (e.g., "Cooked" or "Chopped")
-
-    public Color cookedColor = Color.red; // Color when the food is cooked
-    public Color choppedColor = Color.green; // Color when the food is chopped
-    private SpriteRenderer spriteRenderer; // Sprite renderer to change the color
+    public bool isCooked = false; // Tracks if the food is cooked
+    public Sprite cookedSprite; // Sprite to display when the food is cooked
+    private SpriteRenderer spriteRenderer; // Sprite renderer to change the sprite
 
     void Awake()
     {
@@ -19,7 +15,7 @@ public class Lan_FoodItem : MonoBehaviour
         }
     }
 
-    // Property to manage the cooked state with color change
+    // Property to manage the cooked state with sprite change
     public bool IsCooked
     {
         get => isCooked;
@@ -28,31 +24,21 @@ public class Lan_FoodItem : MonoBehaviour
             isCooked = value;
             if (isCooked)
             {
-                UpdateColor(cookedColor);
+                UpdateSprite();
             }
         }
     }
 
-    // Property to manage the chopped state with color change
-    public bool IsChopped
+    // Method to update the sprite of the food item
+    private void UpdateSprite()
     {
-        get => isChopped;
-        set
+        if (spriteRenderer != null && cookedSprite != null)
         {
-            isChopped = value;
-            if (isChopped)
-            {
-                UpdateColor(choppedColor);
-            }
+            spriteRenderer.sprite = cookedSprite;
         }
-    }
-
-    // Method to update the color of the sprite
-    private void UpdateColor(Color newColor)
-    {
-        if (spriteRenderer != null)
+        else
         {
-            spriteRenderer.color = newColor;
+            Debug.LogWarning("Cooked sprite not assigned or SpriteRenderer missing!");
         }
     }
 }

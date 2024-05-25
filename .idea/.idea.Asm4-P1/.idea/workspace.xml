@@ -6,10 +6,27 @@
   <component name="ChangeListManager">
     <list default="true" id="41b7a916-ab92-49d9-ad02-1093e53f3259" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Asm4-P1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asm4-P1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Lan_ChopStation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Lan_ChopStation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Assets/Animation/Players/BackWalk.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Assets/Animation/Players/BackWalk.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Assets/Animation/Players/FrontWalk.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Assets/Animation/Players/FrontWalk.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Assets/Animation/Players/RightWalk.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Assets/Animation/Players/RightWalk.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Assets/Carrot200.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Assets/Carrot200.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Assets/Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Assets/Icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/BeefCook.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/BeefCook.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/CarrotCook.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/CarrotCook.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/FishCook.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/FishCook.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/LettuceCook.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/LettuceCook.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/NoodlesCook.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/NoodlesCook.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/RiceCook.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Lan_Prefab/RiceCook.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scenes/Lan_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scenes/Lan_Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scenes/Lan_Scene/NavMesh-NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scenes/Lan_Scene/NavMesh-NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scenes/Lan_Scene/NavMesh-NavMesh.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scenes/Lan_Scene/NavMesh-NavMesh.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Akino/Akino_Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Akino/Akino_Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_CookStation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_CookStation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_Customer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_Customer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_PatienceBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_PatienceBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_SeatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_SeatManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_CustomerSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_CustomerSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_FoodItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_FoodItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_ShippingCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_ShippingCounter.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +39,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Lan_ChopStation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lan_TrashCan.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/HealthManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_CounterSlot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_Customer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PrototypeFolder/Scripts/Lan/Lan_FoodItem.cs" root0="FORCE_HIGHLIGHTING" />

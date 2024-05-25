@@ -28,7 +28,7 @@ public class Lan_Customer : MonoBehaviour
     private const string ANIM_RIGHT_WALK = "Right";
 
     public bool isWaitingForSeat = false;
-    public float timeStartedWaitingForSeat = float.MaxValue;
+    private bool hasLeftUnserved = false;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -130,7 +130,12 @@ public class Lan_Customer : MonoBehaviour
 
     public void GoAway()
     {
-        Destroy(gameObject,1f);
+        if (!isBeingServed && !hasLeftUnserved)
+        {
+            HealthManager.Instance.DecreaseHealth();
+            hasLeftUnserved = true; // Set the flag to true after decreasing health
+        }
+        Destroy(gameObject, 1f);
     }
     void Update()
     {
