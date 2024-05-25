@@ -43,6 +43,7 @@ public class Akino_Player : MonoBehaviour
         pointer = GameObject.Find("Pointer").transform;
         lookTarget = GameObject.Find("LookTarget").transform;
         playersAnimator = FindObjectOfType<Animator>();
+        
     }
 
     private void FixedUpdate()
@@ -59,6 +60,7 @@ public class Akino_Player : MonoBehaviour
         {
             highestVelocity = 0;
         }
+        
         #endregion
     }
 

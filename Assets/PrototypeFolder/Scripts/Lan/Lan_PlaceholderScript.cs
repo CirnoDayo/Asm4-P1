@@ -18,14 +18,22 @@ public class Lan_PlaceholderScript : MonoBehaviour
     public bool[] slotAvailability; // Array to keep track of slot availability
 
     Akino_UIManager UIManager;
+    public AudioSource audioSource;
+
 
     private void Start()
     {
         UIManager = GetComponent<Akino_UIManager>();
         buttonIndex = ingredientsMenu.GetComponentsInChildren<Button>();
+        slotAvailability = new bool[counterSlots.Count]; // Initialize based on the number of slots
+        for (int i = 0; i < counterSlots.Count; i++) {
+            slotAvailability[i] = true;  // Assume all slots are initially available
+            counterSlots[i].slotIndex = i;  // Ensure slots know their index
+        }
+        audioSource = GameObject.Find("SoundEffects").GetComponent<AudioSource>();
     }
 
-    public void RegisterSlot(Lan_CounterSlot slot)
+    /*public void RegisterSlot(Lan_CounterSlot slot)
     {
         
         if (slotAvailability == null || slotAvailability.Length < counterSlots.Count)
@@ -33,7 +41,7 @@ public class Lan_PlaceholderScript : MonoBehaviour
             slotAvailability = new bool[counterSlots.Count];
         }
         slotAvailability[slot.slotIndex] = true; // All slots are initially free
-    }
+    }*/
 
     public void Input(string message)
     {
@@ -90,11 +98,14 @@ public class Lan_PlaceholderScript : MonoBehaviour
         // Instantiate the ingredient at the position of the free slot
         Instantiate(ingredient, counterSlots[freeSlotIndex].transform.position, Quaternion.identity);
         slotAvailability[freeSlotIndex] = false; // Mark the slot as occupied
+        audioSource.Play();
         Akino_EventManager.FridgeToggle();
+        
     }
 
     private int GetFreeSlotIndex()
     {
+       Debug.Log(slotAvailability.Length);
         for (int i = 0; i < slotAvailability.Length; i++)
         {
             if (slotAvailability[i])

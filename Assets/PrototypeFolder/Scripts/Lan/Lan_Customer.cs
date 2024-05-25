@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
+using UnityEngine.UI; 
 
 public class Lan_Customer : MonoBehaviour
 {
@@ -29,6 +30,9 @@ public class Lan_Customer : MonoBehaviour
 
     public bool isWaitingForSeat = false;
     private bool hasLeftUnserved = false;
+    
+    public List<Image> noSeatAvailableImages;
+   
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -36,6 +40,10 @@ public class Lan_Customer : MonoBehaviour
         agent.updateUpAxis = false;
         PatienceBar = GetComponent<Lan_PatienceBar>();
         customerAnimator = GetComponent<Animator>();
+        foreach (var image in noSeatAvailableImages)
+        {
+            image.gameObject.SetActive(false); // Ensure all images are hidden on start
+        }
         CheckForSeat();
     }
 
@@ -52,6 +60,10 @@ public class Lan_Customer : MonoBehaviour
             Debug.Log("No available seats.");
             isWaitingForSeat = true;
             PatienceBar.SetSeatWaitingMode(true);
+            foreach (var image in noSeatAvailableImages)
+            {
+                image.gameObject.SetActive(true); // Show all no seat images
+            }
             StartCoroutine(CheckSeatAvailability());
         }
     }
@@ -85,6 +97,10 @@ public class Lan_Customer : MonoBehaviour
         List<Lan_GameManager.FoodRequest> requests = GenerateRequest();
         RegisterCustomer(requests);
         isWaitingForSeat = false;
+        foreach (var image in noSeatAvailableImages)
+        {
+            image.gameObject.SetActive(false); // Hide all no seat images
+        }
         PatienceBar.SetSeatWaitingMode(false);
         PatienceBar.ResetPatience(); // Reset patience to 30 seconds
     }

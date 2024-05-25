@@ -8,7 +8,13 @@ public class ShippingCounter : MonoBehaviour
     public float raycastLength = 2f; // Length of the raycast
     public LayerMask foodLayer; // Layer that only food items are on
     private List<string> currentOrder = new List<string>(); // Temporarily holds the food items placed on the counter
+    
+    private AudioSource deliverySound; 
 
+    void Start()
+    {
+        deliverySound = GetComponent<AudioSource>(); // Get the AudioSource component
+    }
     void Update()
     {
         // Cast a ray forward from the raycast origin
@@ -16,6 +22,7 @@ public class ShippingCounter : MonoBehaviour
         if (hit.collider != null && hit.collider.CompareTag("Pickup"))
         {
             Debug.Log(hit.transform.name + " have been delivered");
+            deliverySound.Play(); 
             ProcessFoodItem(hit.collider);
         }
     }

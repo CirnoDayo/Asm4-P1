@@ -12,7 +12,12 @@ public class Lan_CookStation : MonoBehaviour
     public Image progressBar;
     private GameObject currentFoodItem;
     private bool isProcessing = false;
+    private AudioSource cookingSound;
 
+    void Start()
+    {
+        cookingSound = GetComponent<AudioSource>();  // Get the AudioSource component
+    }
     void Update()
     {
         Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, overlapBoxSize, 0, foodLayer);
@@ -44,6 +49,7 @@ public class Lan_CookStation : MonoBehaviour
     {
         isProcessing = true;
         progressBar.fillAmount = 0;
+        cookingSound.Play(); 
         float startTime = Time.time;
         float endTime = startTime + processTime;
 
@@ -54,6 +60,7 @@ public class Lan_CookStation : MonoBehaviour
         }
 
         progressBar.fillAmount = 1.0f;
+        cookingSound.Stop();
         if (currentFoodItem != null)
         {
             currentFoodItem.GetComponent<Lan_FoodItem>().IsCooked = true; 
@@ -66,6 +73,10 @@ public class Lan_CookStation : MonoBehaviour
     {
         progressBar.fillAmount = 0;
         currentFoodItem = null;
+        if (isProcessing)
+        {
+            cookingSound.Stop();  // Ensure sound is stopped if process is reset
+        }
     }
 
     void OnDrawGizmosSelected()

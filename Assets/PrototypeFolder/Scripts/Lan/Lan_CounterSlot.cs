@@ -12,7 +12,7 @@ public class Lan_CounterSlot : MonoBehaviour
     private void Start()
     {
         gameManager = FindObjectOfType<Lan_PlaceholderScript>();
-        gameManager.RegisterSlot(this);
+        //gameManager.RegisterSlot(this);
     }
 
     private void Update()
@@ -22,25 +22,19 @@ public class Lan_CounterSlot : MonoBehaviour
 
     private void CheckForPickupObjects()
     {
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, boxSize, 0);
-        if (colliders.Length > 0)
-        {
-            // Process the first food item found that hasn't been processed yet
-            foreach (Collider2D collider in colliders)
-            {
-                if (collider.CompareTag("Pickup"))
-                {
+       
+            Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, boxSize, 0);
+            bool foundPickup = false;
 
-                    //bool isAvailable = false;
-                    gameManager.SetSlotAvailability(slotIndex, false);
+            foreach (Collider2D collider in colliders) {
+                if (collider.CompareTag("Pickup")) {
+                    foundPickup = true;
                     break;
                 }
-                else
-                {
-                    gameManager.SetSlotAvailability(slotIndex, true);
-                }
             }
-        }
+
+            gameManager.SetSlotAvailability(slotIndex, !foundPickup);
+        
     }
 
 
