@@ -8,7 +8,7 @@ public class HealthManager : MonoBehaviour
 
     public Image healthBar;
     public int maxHealth = 10;
-    private int currentHealth;
+    public int currentHealth;
 
     private void Awake()
     {
@@ -39,6 +39,6 @@ public class HealthManager : MonoBehaviour
     private void LoadGameOver()
     {
         Debug.Log("Game Over!");
-        SceneManager.LoadScene("GameOverScene"); // Replace "GameOverScene" with the actual name of your game over scene.
+        SceneManager.LoadScene("GameOver"); // Replace "GameOverScene" with the actual name of your game over scene.
     }
 }
